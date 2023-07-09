@@ -1,0 +1,78 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&family=Roboto&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    background: white;
+    font-family: 'Poppins', sans-serif;
+}
+
+.content .home-content{
+    display: flex;
+    padding: 30px;
+    justify-content: center;
+    height: 100vh;
+    flex-direction: column;
+    background: url(wp2714503.jpg);
+    background-position: center;
+    background-size: cover;
+}
+
+.home-content h1 {
+    color: antiquewhite;
+    font-size: 80px;
+}
+
+.home-content p {
+    color: antiquewhite;
+    font-size: 30px;
+    margin-bottom: 40px;
+}
+
+.home-content .button {
+    padding: 20px;
+    font-size: 20px;
+    background: rgb(166, 37, 37);
+    color: white;
+    border-radius: 50px;
+}
+
+.home-content .button:hover {
+    background-color: red;
+}
+
+#search {
+    display: flex;
+    align-items: center;
+    padding: 20px 60px;
+}
+
+#search input[type="text"] {
+    padding: 8px;
+    border-radius: 10px;
+    flex: 1;
+    margin-left: 60px;
+}
+
+#search button {
+    padding: 6px 14px;
+    background-color: #4CAF50;
+    color: white;
+    border-radius: 8px;
+    margin-left: 8px;
+}
+
+img {
+    border-color: black;
+    border-radius: 20px;
+}
+
+#movie-container {
+    display: flex;
+    margin: 10px 20px;
+    padding: 10px 20px;
+}

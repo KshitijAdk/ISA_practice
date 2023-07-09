@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        //     var greeting = (name)=>{
+
+        //     alert("Hello"+ name)
+        // }
+
+        // var processUserInput = (callback)=> {
+        //     setTimeout(()=> {
+        //         var name = prompt("Enter your name");
+        //         callback(name)
+        //     }, 5000);
+        // }
+        // processUserInput(greeting)
+        // console.log()
+
+        //  fetch('https://dummyjson.com/products/1')
+        //  .then(function(response){
+        //     console.log(response.json())
+        //  })
+        //  .catch(function(){
+        //     console.log("Error occured")
+        //  })
+
+        async function fetchData() {
+            const response = await fetch('https://dummyjson.com/products/1');
+            const data = await response.json();
+            var brandvar = document.getElementById("brand")
+            brandvar.innerHTML = data.brand;
+            var category = document.getElementById("category")
+            category.innerHTML = data.category;
+            var description = document.getElementById("description")
+            description.innerHTML = data.description;
+            var photo = document.getElementById('pic')
+            photo.src = data.thumbnail;
+            var image = document.getElementById('image')
+            image.src = data.images[3];
+
+            console.log(data)
+        }
+        fetchData();
+
+    </script>
+    <h1 id="brand"></h1>
+    <h1 id="category"></h1>
+    <h1 id="description"></h1>
+    <img src="" id="pic" alt="">
+    <img id="image">
+</body>
+
+</html>
