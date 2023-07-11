@@ -1,12 +1,13 @@
 const searchInput = document.querySelector("#searchInput");
-searchButton = document.querySelector("#searchButton");
-weatherIcon = document.querySelector("#weatherIcon");
-windSpeed = document.querySelector("#windSpeed");
-humidity = document.querySelector(".humidity");
-weather = document.querySelector(".weather");
-desc = document.querySelector(".desc");
-API = "d1a02306b7e6b7ea4e5a0c429ee4f9b5";
-// --------------------- Created By InCoder ---------------------
+const searchButton = document.querySelector("#searchButton");
+const weatherIcon = document.querySelector("#weatherIcon");
+const windSpeed = document.querySelector("#windSpeed");
+const humidity = document.querySelector(".humidity");
+const weather = document.querySelector(".weather");
+const desc = document.querySelector(".desc");
+const API = "d1a02306b7e6b7ea4e5a0c429ee4f9b5";
+
+
 const setWeatherDetails = (data) => {
   // console.log(data);
   desc.innerHTML = data.weather[0].description;
