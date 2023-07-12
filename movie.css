@@ -45,34 +45,35 @@ html {
     background-color: red;
 }
 
-#search {
+  #search {
     display: flex;
     align-items: center;
     padding: 20px 60px;
-}
-
-#search input[type="text"] {
-    padding: 8px;
-    border-radius: 10px;
-    flex: 1;
-    margin-left: 60px;
-}
-
-#search button {
-    padding: 6px 14px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-right: 10px;
+    width: 200px;
+  }
+  
+  #btn {
+    padding: 10px 20px;
     background-color: #4CAF50;
+    border: none;
     color: white;
-    border-radius: 8px;
-    margin-left: 8px;
-}
-
-img {
-    border-color: black;
-    border-radius: 20px;
-}
+    border-radius: 4px;
+    cursor: pointer;
+    width: 10%;
+  }
+  
+  #btn:hover {
+    background-color: #45a049;
+  }
+  
 
 #movie-container {
     display: flex;
     margin: 10px 20px;
     padding: 10px 20px;
+    flex-wrap: wrap;
+    gap: 18px;
 }

@@ -8,20 +8,6 @@
     <script src="script.js"></script>
 </head>
 <body>
-
-    <script>
-        let video = document.querySelector("#video");
-
-if (navigator.mediaDevices.getUserMedia) {
-    navigator.mediaDevices.getUserMedia({video:true})
-    .then(function(stream) {
-        video.srcObject = stream;
-    })
-    .catch(function(errOr) {
-        console.log("Something went wrong");
-    });
-}
-    </script>
     
 </body>
 </html>
