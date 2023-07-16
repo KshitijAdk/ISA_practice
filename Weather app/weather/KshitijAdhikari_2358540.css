@@ -9,15 +9,15 @@
 }
 
 .container {
-    background: #171717;
-    color: gold;
+    background: #036644;
+    color: white;
     padding: 2rem;
     width: 40%;
     margin: 4rem auto;
-    border-radius: 10px;
+    border-radius: 15px;
 }
 
-.weather__header {
+.header {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -25,60 +25,55 @@
 
 input {
     border: none;
-    background: #1e1e1e;
+    background: #fff;
     outline: none;
-    color: gold;
+    color: black;
     padding: 0.8rem 2.9rem;
     border-radius: 20px;
 }
 
 input::placeholder {
-    color: gold;
+    color: black;
 }
 
-.weather__search {
+.search {
     position: relative;
-    left: 145px;
+    left: 130px;
 }
 
-.weather__search i {
+.search i {
     position: absolute;
     left: 20px;
     top: 15px;
     font-size: 20px;
-    color: gold;
+    color: black;
 }
-
-
 
 .weatherBody {
     text-align: center;
     margin-top: 3rem;
 }
 
-.weatherDateTime {
+.weather_datetime {
     margin-bottom: 2rem;
     font-size: 14px;
 }
 
 .weatherForecast {
-    background: #1e1e1e;
+    font-size: 25px;
     display: inline-block;
     padding: 0.5rem 1rem;
-    border-radius: 30px;
 }
 
-.weather__icon img {
+.weatherIcon img {
     width: 100px;
 }
 
-.weather__temperature {
+.temperature {
     font-size: 3rem;
 }
 
-
-
-.weather__info {
+.weatherInfo {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-gap: 1rem;
@@ -86,36 +81,36 @@ input::placeholder {
     
 }
 
-.weather__card {
+.weatherCard {
     display: flex;
     align-items: center;
-    background: #1e1e1e;
+    background: #059b67;
     padding: 1rem;
     border-radius: 10px;
 }
 
-.weather__card i {
+.weatherCard i {
     font-size: 1.5rem;
     margin-right: 1rem;
 }
 
-.weather__card p {
+.weatherCard p {
     font-size: 14px;
 }
-.weather__card2 {
+.weatherCard2 {
     margin: 0.8rem;
     display: flex;
     align-items: center;
-    background: #1e1e1e;
+    background: #059b67;
     padding: 1rem;
     border-radius: 10px;
 }
 
-.weather__card2 i {
+.weatherCard2 i {
     font-size: 1.5rem;
     margin-right: 1rem;
 }
 
-.weather__card2 p {
+.weatherCard2 p {
     font-size: 14px;
 }

@@ -1,126 +1,138 @@
-@import url("https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Ubuntu", sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
 }
 
 body {
-  display: flex;
-  height: 100vh;
-  align-items: center;
-  justify-content: center;
-  background-color: #8182c8;
+    display: flex;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+    background-color: yellowgreen;
 }
 
 .mainContainer {
-  width: 30rem;
-  height: 30rem;
-  border-radius: 1rem;
-  background: #fff;
+    width: 35rem;
+    height: 35rem;
+    border-radius: 1rem;
+    background: #fff;
 }
 
 .searchInput {
-  width: 100%;
-  display: flex;
-  padding: 1rem 1rem;
-  justify-content: center;
+    width: 100%;
+    display: flex;
+    padding: 1rem;
+    justify-content: center;
 }
 
 .searchInput input {
-  width: 100%;
-  height: 2rem;
-  outline: none;
-  font-size: 0.8rem;
-  color: #525050;
-  padding: 0.2rem 0.5rem;
-  border-radius: 1.5rem;
-  border: 1px solid #b3b3b3;
+    width: 100%;
+    height: 2rem;
+    outline: none;
+    font-size: 0.8rem;
+    color: black;
+    padding: 0.5rem;
+    border-radius: 1rem;
+    border: 1px solid gray;
 }
 
 .searchInput input:focus {
-  border: 1px solid #9c9dde;
+    border: 1px solid rgb(1, 60, 80);
 }
 
 .searchInput button {
-  width: 2.2rem;
-  height: 2rem;
-  cursor: pointer;
-  color: #9b9b9b;
-  border-radius: 50%;
-  margin-left: 0.4rem;
-  transition: all 0.3s ease;
-  background-color: #fff;
-  border: 1px solid #b3b3b3;
+    width: 2rem;
+    height: 2rem;
+    cursor: pointer;
+    color: gray;
+    border-radius: 50%;
+    margin-left: 0.5rem;
+    background-color: #fff;
+    border: 1px solid rgb(70, 66, 66);
+    transition: all 0.3s ease;
 }
 
 .searchInput button:hover {
-  color: #fff;
-  background-color: #9c9dde;
-  border: 1px solid #9c9dde;
+    color: #fff;
+    background-color: rgb(163, 132, 163);
+    border: 1px solid rgb(165, 130, 165);
 }
 
+
 .weatherIcon {
-  display: flex;
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
-  justify-content: center;
+    display: flex;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
 }
 
 .weatherIcon img {
-  max-width: 100%;
-  width: 8rem;
+    max-width: 100%;
+    width: 8rem;
 }
 
 .cityDetails {
-  color: #323232;
-  font-size: 2.5rem;
-  text-align: center;
-  margin-bottom: 3rem;
+    color: rgb(62, 25, 25);
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 3rem;
 }
 
 .windDetails {
-  display: flex;
-  margin-top: 1rem;
-  margin-bottom: 1.5rem;
-  justify-content: space-around;
+    display: flex;
+    margin-top: 1rem;
+    margin-bottom: 1.5rem;
+    justify-content: space-around;
+    display: contents;
 }
 
 .windDetails .humidityBox {
-  display: flex;
-  font-size: 1rem;
-  color: #323232;
-
+    display: flex;
+    font-size: 1rem;
+    color:rgb(62, 25, 25);
+    background-color: rgb(172, 167, 167);
+    width: 50%;
+    border-radius: 2rem;
+    margin-bottom: 1rem;
+    margin-left: 10rem;
 }
 
 .windDetails .humidityBox img {
-  max-height: 3rem;
-  margin-right: 0.5rem;
+    max-height: 4rem;
+    margin-right: 0.5rem;
 }
 
 .windDetails .pressureBox {
-  display: flex;
-  font-size: 1rem;
-  color: #323232;
-
+    display: flex;
+    font-size: 1rem;
+    color:rgb(62, 25, 25);
+    background-color: rgb(172, 167, 167);
+    width: 50%;
+    border-radius: 2rem;
+    margin-bottom: 1rem;
+    margin-left: 10rem;
 }
 
 .windDetails .pressureBox img {
-  max-height: 3rem;
-  margin-right: 0.5rem;
+    max-height: 4rem;
+    margin-right: 0.5rem;
 }
 
 .windDetails .windSpeed {
-  display: flex;
-  font-size: 1rem;
-  color: #323232;
+    display: flex;
+    font-size: 1rem;
+    color:rgb(62, 25, 25);
+    background-color: rgb(172, 167, 167);
+    width: 50%;
+    border-radius: 2rem;
+    margin-left: 10rem;
 }
 
 .windDetails .windSpeed img {
-  max-height: 3rem;
-  margin-right: 0.5rem;
-}  
-.weather img{
-transform: scale(2); }
+    max-height: 4rem;
+    margin-right: 0.5rem;
+}
+
