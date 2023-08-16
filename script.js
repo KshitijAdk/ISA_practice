@@ -1,74 +1,91 @@
 
-let currCity = "Troy ";
-let units = "metric";
 
+const URL = "http://127.0.0.1:5500/week5.html"
 
-let city = document.querySelector(".weather__city");
-let datetime = document.querySelector(".weather__datetime");
-let weather__forecast = document.querySelector('.weather__forecast');
-let weather__temperature = document.querySelector(".weather__temperature");
-let weather__icon = document.querySelector(".weather__icon");
-let weather__humidity = document.querySelector('.weather__humidity');
-let weather__wind = document.querySelector('.weather__wind');
-let weather__pressure = document.querySelector('.weather__pressure');
+function deleteMovie(id){
+    fetch(URL+"/"+id,{
+        headers:{
+            "Content-Type":"application/json"
+        },
+        method:"DELETE",
+    }).then((response)=>response.json()).then((data)=>{
+        
+        fetchMovies();
+    }).catch((err)=>{
+        console.log("Error Deleting",err)
+    })
+}
 
+function fetchMovies(){
+    fetch(URL).then((response)=> response.json())
+    .then((movies)=>{
 
+        movies.forEach((movie)=>{
+            let movieELem = document.createElement("div");
+            movieELem.setAttribute("class","movie");
+            let headingElem = document.createElement("h1");
+            headingElem.innerText = movie.title;
+            movieELem.appendChild(headingElem)
+            let spanELem = document.createElement("span");
+            spanELem.innerText = "Directed By : " + movie.director
+            let btn = document.createElement("button");
+            btn.setAttribute("class","deleteBtn")
+            btn.innerText = "Delete"
+            btn.addEventListener("click",()=>{
+                deleteMovie(movie.id);
+            })
+            let updatebtn = document.createElement("button");
+            updatebtn.setAttribute("class","updateBtn")
+            updatebtn.innerText = "Update"
+            movieELem.appendChild(spanELem)
+            movieELem.appendChild(btn)
+            movieELem.appendChild(updatebtn)
+            document.getElementById("movieLists").appendChild(movieELem);
+            
+        
+        })
+        
+        
+    })
 
-document.querySelector(".weather__search").addEventListener('submit', e => {
-    let search = document.querySelector(".weather__searchform");
+}
+
+function updateMovie(id){
+
+}
+
+function addMovie(title,genre,director,release) {
     
-    e.preventDefault();
-    
-    currCity = search.value;
-    
-    getWeather();
-
-    search.value = ""
-})
-
-
-
-function convertTimeStamp(timestamp, timezone){
-     const convertTimezone = timezone / 3600;
-
-    const date = new Date(timestamp * 1000);
-    
-    const options = {
-        weekday: "long",
-        day: "numeric",
-        month: "long",
-        year: "numeric",
-        hour: "numeric",
-        minute: "numeric",
-        timezone: "long",
-        hour12: true,
+   
+    const data = {
+        "title":title,
+        "genre":genre,
+        "director":director,
+        "releaseYear":release
     }
-    return date.toLocaleString("en-US", options)  
+    fetch(URL,{
+        headers:{
+            "Content-Type":"application/json"
+        },
+        method:"POST",
+        body:JSON.stringify(data)
+    }).then((response)=>response.json()).then((data)=>{
+        console.log("data",data)
+        fetchMovies();
+    })
 }
- 
 
 
-function convertCountryCode(country){
-    let regionNames = new Intl.DisplayNames(["en"], {type: "region"});
-    return regionNames.of(country)
-}
+fetchMovies()
 
-function getWeather(){
-    const API_KEY = '797737ffe7937e5a03dc0881afb13911'
 
-fetch(`https://api.openweathermap.org/data/2.5/weather?q=${currCity}&appid=${API_KEY}&units=${units}`)
-    .then(res => res.json())
-    .then(data => {
-    console.log(data)
-    city.innerHTML = `${data.name}, ${convertCountryCode(data.sys.country)}`
-    datetime.innerHTML = convertTimeStamp(data.dt, data.timezone); 
-    weather__forecast.innerHTML = `<p>${data.weather[0].main}`
-    weather__temperature.innerHTML = `${data.main.temp.toFixed()}&#176`
-    weather__icon.innerHTML = `   <img src="http://openweathermap.org/img/wn/${data.weather[0].icon}@4x.png" />`
-    weather__humidity.innerHTML = `${data.main.humidity}%`
-    weather__wind.innerHTML = `${data.wind.speed} ${units === "imperial" ? "mph": "m/s"}` 
-    weather__pressure.innerHTML = `${data.main.pressure} hPa`
+document.getElementById("movieForm").addEventListener("submit",(e)=>{
+    e.preventDefault();
+    const title = e.target.title.value;
+    const genre = e.target.genre.value;
+    const releaseYear = e.target.release.value;
+    const director = e.target.director.value;
+
+    addMovie(title,genre,director,releaseYear)
+
 })
-}
-
-document.body.addEventListener('load', getWeather())
